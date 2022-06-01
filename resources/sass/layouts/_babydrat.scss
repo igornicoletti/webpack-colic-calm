@@ -1,0 +1,104 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.babydrat {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .babydratCtn {
+    padding: 5rem 1.875rem 0;
+    @include maxContainer();
+    @include sm {
+      padding: 5rem 1.325rem 0;
+    }
+
+    .babydratCtnGrid {
+      @include displayGrid($gap: 1.25rem, $align: flex-start, $justify: space-between, $columns: repeat(4, 1fr));
+      @include md {
+        gap: 3.5rem 1.25rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include sm {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      & > li {
+        height: 100%;
+        @include displayGrid($rows: auto 1fr);
+
+        .babydratCtnGridIcon {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          margin-bottom: 2.5rem;
+          background-color: #ffdc80;
+          @include displayFlex($align: center, $justify: center);
+        }
+
+        .babydratCtnGridCard {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          padding: 1.6875rem 1.875rem;
+
+          &:before {
+            top: 0;
+            left: 0;
+            z-index: -1;
+            content: "";
+            width: 100%;
+            position: absolute;
+            border-radius: 1.75rem;
+            height: calc(100% - 2rem);
+            background-color: #ffd580;
+            border: 0.125rem solid #ffd580;
+          }
+
+          &:after {
+            top: 0;
+            left: 0;
+            z-index: -1;
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: calc(100% - 2rem);
+            background-color: #ffd580;
+            border: 0.125rem solid #ffd580;
+            border-radius: 1.75rem 0 1.75rem 1.75rem;
+            border-right: inherit;
+          }
+
+          & > div {
+            @include displayGrid();
+
+            & > h2 {
+              height: 100%;
+              position: relative;
+              min-height: 6.5625rem;
+              padding-bottom: 2.75rem;
+              @include fontStyles($family: "Poppins-Medium", $color: #3c3c46, $size: 1.375rem, $height: 1.875rem);
+
+              &:after {
+                left: 0;
+                content: "";
+                width: 2.5rem;
+                bottom: 1.375rem;
+                height: 0.3125rem;
+                position: absolute;
+                border-radius: 1rem;
+                background-color: #2380aa;
+              }
+            }
+
+            & > p {
+              @include fontStyles($family: "Nunito-Medium", $color: #3c3c46, $size: 1.125rem, $height: 1.625rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}

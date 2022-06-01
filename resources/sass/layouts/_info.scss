@@ -1,0 +1,85 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.info {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-bottom: 3.625rem;
+  background-color: #ffcd00;
+
+  .infoCtn {
+    padding: 0 1.875rem 4.5rem;
+    @include maxContainer();
+    @include sm {
+      padding: 0 1.325rem 4.5rem;
+    }
+
+    .infoCtnGrid {
+      @include displayGrid($gap: 5rem, $align: flex-start, $justify: space-between, $columns: 1fr 1.15fr 1.35fr);
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      & > li {
+        @include displayGrid();
+
+        .infoCtnGridIcon {
+          left: 0;
+          top: -2.5rem;
+          position: absolute;
+
+          & > div {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background-color: white;
+            @include displayFlex($align: center, $justify: center);
+          }
+        }
+
+        .infoCtnGridCard {
+          padding-top: 5rem;
+          @include displayGrid($gap: 1.6875rem);
+
+          & > h2 {
+            @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 2.125rem, $height: 2.5rem);
+            @include md {
+              max-width: 28rem;
+
+              & > br {
+                display: none;
+              }
+            }
+          }
+
+          & > p {
+            @include fontStyles($family: "Nunito-Medium", $color: #3c3c46, $size: 1.3125rem, $height: 1.875rem);
+
+            & > span {
+              font-family: "Nunito-ExtraBold";
+            }
+          }
+
+          & > ul {
+            @include displayGrid($gap: 1.25rem);
+
+            & > li {
+              @include displayGrid($gap: 0.875rem, $align: flex-start, $justify: flex-start, $columns: repeat(2, auto));
+
+              & > p {
+                @include fontStyles($family: "Nunito-Medium", $color: #3c3c46, $size: 1.3125rem, $height: 1.875rem);
+              }
+
+              & > img {
+                padding-top: 0.6875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

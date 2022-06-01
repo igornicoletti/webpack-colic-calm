@@ -1,0 +1,41 @@
+﻿// font-styles
+@mixin fontStyles($family, $color, $size: 1rem, $height: 1rem, $align: left, $spacing: 0, $decoration: none) {
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+  line-height: $height;
+  letter-spacing: $spacing;
+  font-family: $family;
+  text-decoration: $decoration;
+}
+
+// container
+@mixin maxContainer($maxWidth: 77.5rem) {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: $maxWidth;
+}
+
+// display flex
+@mixin displayFlex($gap: 0, $text: left, $align: initial, $justify: initial) {
+  gap: $gap;
+  text-align: $text;
+  position: relative;
+  display: inline-flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// display grid
+@mixin displayGrid($gap: 0rem, $text: left, $align: initial, $justify: initial, $rows: initial, $columns: initial) {
+  gap: $gap;
+  width: 100%;
+  display: grid;
+  text-align: $text;
+  position: relative;
+  align-items: $align;
+  justify-content: $justify;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+}

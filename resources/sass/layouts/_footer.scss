@@ -1,0 +1,117 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.footer {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color: #ffdc80;
+
+  &::before {
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../img/icon_footer_opct.svg);
+  }
+
+  .footerCtn {
+    padding: 3.75rem 1.875rem 3.5rem;
+    @include maxContainer();
+    @include sm {
+      padding: 3.75rem 1.325rem 3.5rem;
+    }
+
+    .footerCtnGrid {
+      padding-left: 15rem;
+      @include displayGrid($gap: 4.75rem, $justify: flex-start, $columns: auto 1fr);
+      @include md {
+        gap: 2.5rem;
+        grid-template-columns: 1fr;
+      }
+      @include sm {
+        padding: 0;
+      }
+
+      .footerCtnGridImage {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        @include sm {
+          display: none;
+        }
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+      }
+
+      .footerCtnGridTitle {
+        @include displayGrid($gap: 2.5rem);
+
+        & > img {
+          height: 2.5rem;
+          width: 18.625rem;
+        }
+
+        & > p {
+          width: 100%;
+          max-width: 18.625rem;
+          @include fontStyles($family: "Nunito-Medium", $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
+          @include md {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .footerCtnGridList {
+        @include displayGrid($gap: 2.5rem, $align: flex-end, $justify: space-between, $columns: repeat(2, auto));
+        @include sm {
+          grid-template-columns: 1fr;
+        }
+
+        .footerCtnGridListNav {
+          & > ul {
+            @include displayGrid($gap: 0.875rem);
+
+            & > li > a {
+              @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 0.9375rem);
+              @include displayGrid($gap: 0.875rem, $align: center, $justify: flex-start, $columns: repeat(2, auto));
+            }
+          }
+        }
+
+        .footerCtnGridListSocials {
+          height: 100%;
+          @include displayGrid($gap: 2.5rem, $align: flex-start, $rows: 1fr auto);
+
+          & > ul {
+            @include displayGrid($gap: 2.5rem, $align: center, $justify: space-around, $columns: repeat(3, auto));
+
+            & > li > a > img {
+              width: 1.875rem;
+              height: 1.875rem;
+            }
+          }
+
+          & > p {
+            @include fontStyles($family: "Nunito-Bold", $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
+            @include sm {
+              text-align: center;
+
+              & > br:first-child {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

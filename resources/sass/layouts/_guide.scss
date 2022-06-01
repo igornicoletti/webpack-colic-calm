@@ -1,0 +1,107 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.guide {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color: #ffdc80;
+
+  .guideCtn {
+    padding: 3.75rem 1.875rem 3.5rem;
+    @include maxContainer();
+    @include sm {
+      padding: 3.75rem 1.325rem 3.5rem;
+    }
+
+    .guideCtnGrid {
+      @include displayGrid($gap: 2.5rem, $align: center, $justify: space-between, $columns: repeat(3, 1fr));
+      @include sm {
+        gap: 5rem;
+        grid-template-columns: 1fr;
+      }
+
+      .guideCtnGridItem {
+        height: 100%;
+        @include displayGrid($rows: auto auto 1fr auto);
+
+        &:last-child {
+          &::before {
+            display: none;
+          }
+        }
+
+        &::before {
+          bottom: 50%;
+          content: "";
+          width: 0.125rem;
+          height: 4.375rem;
+          right: -1.125rem;
+          position: absolute;
+          background-color: #2380aa;
+          transform: translate(0%, 50%);
+
+          @include sm {
+            right: 50%;
+            content: "";
+            width: 4.375rem;
+            height: 0.125rem;
+            bottom: -2.5rem;
+            transform: translate(50%, 0%);
+          }
+        }
+
+        & > div {
+          width: 5rem;
+          height: 5rem;
+          margin: 0 auto;
+          border-radius: 50%;
+          margin-bottom: 2.25rem;
+          background-color: white;
+          @include displayFlex($align: center, $justify: center);
+        }
+
+        & > h3 {
+          padding-bottom: 1.1875rem;
+          @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 2rem, $height: 2.5rem, $align: center);
+          @include sm {
+            & > br {
+              display: none;
+            }
+          }
+
+          & > span {
+            @include fontStyles(
+              $family: "Nunito-Bold",
+              $color: #3c3c46,
+              $size: 1.3125rem,
+              $height: 1.875rem,
+              $align: center
+            );
+          }
+        }
+
+        & > p {
+          padding-bottom: 1.625rem;
+          @include fontStyles(
+            $family: "Nunito-Medium",
+            $color: #3c3c46,
+            $size: 1.3125rem,
+            $height: 1.875rem,
+            $align: center
+          );
+        }
+
+        & > a {
+          margin: 0 auto;
+          border-radius: 1rem;
+          padding: 0.55rem 1rem;
+          background-color: #2380aa;
+          @include fontStyles($family: "Poppins-Medium", $color: #dcdcff, $size: 0.9375rem, $align: center);
+        }
+      }
+    }
+  }
+}

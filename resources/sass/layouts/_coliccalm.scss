@@ -1,0 +1,212 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.colic {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .colicCtn {
+    padding: 5rem 1.875rem 3.625rem;
+    @include maxContainer();
+    @include sm {
+      padding: 5rem 1.325rem 3.625rem;
+    }
+
+    .colicCtnGrid {
+      @include displayGrid($gap: 5rem, $align: flex-start, $justify: space-between, $columns: repeat(2, 1fr));
+      @include md {
+        grid-template-columns: 1fr;
+      }
+      @include sm {
+        gap: 7.5rem;
+      }
+
+      .colicCtnGridImage {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        @include md {
+          width: 55%;
+        }
+        @include sm {
+          width: 100%;
+        }
+
+        & > img:nth-child(1) {
+          width: 100%;
+          height: auto;
+          position: relative;
+          border-radius: 50%;
+          box-shadow: 0 0.5rem 1rem rgba(35, 128, 170, 0.25);
+        }
+      }
+
+      .colicCtnGridTitle {
+        @include displayGrid();
+
+        & > div {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          margin-bottom: 2.875rem;
+          background-color: #ffdc80;
+          @include displayFlex($align: center, $justify: center);
+        }
+
+        & > h2 {
+          padding-bottom: 3.6875rem;
+          @include fontStyles($family: "Poppins-Bold", $color: var(--dark-light), $size: 2.625rem, $height: 3.125rem);
+
+          & > br {
+            display: none;
+            @include md {
+              display: block;
+            }
+            @include sm {
+              display: none;
+            }
+          }
+        }
+
+        & > p {
+          @include fontStyles($family: "Nunito-Medium", $color: var(--dark-light), $size: 1.6875rem, $height: 2.5rem);
+
+          & > span {
+            color: var(--blue-light);
+            font-family: Nunito-Black;
+          }
+        }
+
+        & > a {
+          width: 9.6875rem;
+          height: 3.4375rem;
+          margin-top: 2.3125rem;
+          border-radius: 1.75rem;
+          background-color: #005f9b;
+          @include displayFlex($align: center, $justify: center);
+          @include fontStyles(
+            $family: "Poppins-Bold",
+            $color: #dcdcff,
+            $size: 1.375rem,
+            $height: 1.375rem,
+            $align: center
+          );
+        }
+      }
+    }
+  }
+}
+
+.colicContact {
+  .colicCtnGrid {
+    align-items: center !important;
+
+    .colicCtnGridImage {
+      & > img:nth-child(2) {
+        left: 0;
+        bottom: 0;
+        width: 25%;
+        height: auto;
+        position: absolute;
+      }
+
+      & > img:nth-child(3) {
+        top: 0;
+        right: 0;
+        width: 35%;
+        height: auto;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.colicCalm {
+  .colicCtnGridImage {
+    margin-top: 5rem !important;
+
+    @include md {
+      margin-top: 0rem !important;
+    }
+
+    & > img:nth-child(2) {
+      right: 0;
+      width: 20%;
+      top: 1.5rem;
+      height: auto;
+      position: absolute;
+    }
+
+    & > img:nth-child(3) {
+      left: 0;
+      width: 50%;
+      height: auto;
+      bottom: -2.5rem;
+      position: absolute;
+    }
+  }
+}
+
+.colicCalm {
+  .colicCtnGridImage {
+    margin-top: 5rem !important;
+
+    @include md {
+      margin-top: 0rem !important;
+    }
+
+    & > img:nth-child(2) {
+      right: 0;
+      width: 20%;
+      top: 1.5rem;
+      height: auto;
+      position: absolute;
+    }
+
+    & > img:nth-child(3) {
+      left: 0;
+      width: 50%;
+      height: auto;
+      bottom: -2.5rem;
+      position: absolute;
+    }
+  }
+}
+
+.colicBabydrat {
+  .colicCtnGridImage {
+    margin-top: 5rem !important;
+
+    @include md {
+      margin-top: 0rem !important;
+    }
+
+    & > img:nth-child(2) {
+      width: 25%;
+      top: -2.5rem;
+      left: 3.5rem;
+      height: auto;
+      position: absolute;
+    }
+
+    & > img:nth-child(3) {
+      bottom: 0;
+      width: 55%;
+      left: 5rem;
+      height: auto;
+      position: absolute;
+    }
+
+    & > img:nth-child(4) {
+      right: 0;
+      width: 55%;
+      height: auto;
+      bottom: -8rem;
+      position: absolute;
+    }
+  }
+}

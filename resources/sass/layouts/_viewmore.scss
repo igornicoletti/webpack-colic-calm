@@ -1,0 +1,79 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.view {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .viewCtn {
+    padding: 3.625rem 1.875rem 4.375rem;
+    @include maxContainer();
+    @include sm {
+      padding: 3.625rem 1.325rem 4.375rem;
+    }
+
+    .viewCtnGrid {
+      @include displayGrid();
+
+      .viewCtnGridTitle {
+        padding-bottom: 2.1875rem;
+        @include displayGrid($gap: 1.25rem, $align: center, $justify: flex-start, $columns: repeat(2, auto));
+
+        & > img {
+          width: 2.1875rem;
+          height: 2.1875rem;
+        }
+
+        & > h3 {
+          @include fontStyles($family: "Poppins-Regular", $color: var(--dark-light), $size: 1.75rem, $height: 2.5rem);
+        }
+      }
+
+      .viewCtnGridList {
+        @include displayGrid($gap: 1.25rem, $align: center, $justify: space-between, $columns: repeat(4, 1fr));
+        @include sm {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        & > li {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          min-height: 8.125rem;
+          padding: 1.6875rem 1.875rem;
+
+          &::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            content: "";
+            height: 77.5%;
+            position: absolute;
+            border-radius: 1.75rem;
+            background-color: #ffdc80;
+          }
+
+          &::after {
+            top: 0;
+            left: 0;
+            width: 87.5%;
+            z-index: -2;
+            content: "";
+            height: 100%;
+            position: absolute;
+            border-radius: 1.75rem;
+            background-color: #ffdc80;
+          }
+
+          & > a {
+            @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 1.375rem, $height: 1.875rem);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "webpack-workflow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.27",
+    "core-js": "^3.2.1",
+    "dotenv": "^8.2.0",
+    "fancybox": "^3.0.1",
+    "aos": "^2.3.4",
+    "jquery": "^3.6.0",
+    "js-cookie": "^3.0.1",
+    "normalize.css": "^8.0.1",
+    "owl.carousel": "^2.3.4",
+    "sass": "^1.51.0",
+    "select2": "^4.1.0-rc.0"
+  },
+  "scripts": {
+    "dev": "webpack -w --config webpack/webpack.config.js --mode=development",
+    "build": "webpack --config webpack/webpack.config.prod.js"
+  },
+  "browserslist": [
+    ">0.2%"
+  ]
+}

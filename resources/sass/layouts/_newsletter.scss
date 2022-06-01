@@ -1,0 +1,131 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.news {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .newsCtn {
+    padding: 4.375rem 1.875rem 9.375rem;
+    @include maxContainer();
+    @include sm {
+      padding: 4.375rem 1.325rem 9.375rem;
+    }
+
+    .newsCtnGrid {
+      @include displayGrid();
+
+      .newsCtnGridTitle {
+        @include displayGrid();
+
+        & > div {
+          width: 5rem;
+          height: 5rem;
+          margin: 0 auto;
+          border-radius: 50%;
+          margin-bottom: 2.5625rem;
+          background-color: #ffdc80;
+          @include displayFlex($align: center, $justify: center);
+        }
+
+        & > h3 {
+          padding-bottom: 1.875rem;
+          @include fontStyles(
+            $family: "Poppins-Regular",
+            $color: var(--dark-light),
+            $size: 1.75rem,
+            $height: 2.5rem,
+            $align: center
+          );
+        }
+      }
+
+      .newsCtnGridList {
+        @include maxContainer($maxWidth: 41.25rem);
+
+        .newsCtnGridListForm {
+          padding-bottom: 1.5625rem;
+
+          & > form {
+            width: 100%;
+            height: 3.75rem;
+            position: relative;
+
+            & > input {
+              width: 100%;
+              height: 100%;
+              border-radius: 1.75rem;
+              background-color: inherit;
+              border: 0.125rem solid var(--blue-light);
+              padding: 0.75rem 8.4375rem 0.75rem 1.875rem;
+              @include fontStyles(
+                $family: "Nunito-Italic",
+                $color: var(--dark-light),
+                $size: 1.3125rem,
+                $height: 1.3125rem
+              );
+              &::placeholder {
+                color: var(--dark-light);
+              }
+            }
+
+            & > button {
+              top: 50%;
+              right: 0.75rem;
+              width: 6.5625rem;
+              height: 2.1875rem;
+              position: absolute;
+              border-radius: 1.5rem;
+              background-color: #2380aa;
+              transform: translate(0%, -50%);
+              @include fontStyles($family: "Poppins-Medium", $color: #dcdcff, $align: center);
+            }
+          }
+        }
+      }
+
+      .newsCtnGridListError {
+        padding-bottom: 1.4375rem;
+        @include displayGrid(
+          $gap: 1.5rem,
+          $align: center,
+          $justify: flex-start,
+          $rows: auto,
+          $columns: repeat(2, auto)
+        );
+
+        & > img {
+          width: 1.875rem;
+          height: 1.875rem;
+        }
+
+        & > p {
+          @include fontStyles($family: "Nunito-ExtraBold", $color: #cd5a5a, $size: 1.3125rem, $height: 1.875rem);
+        }
+      }
+
+      .newsCtnGridListSuccess {
+        width: 100%;
+        height: 3.75rem;
+        position: relative;
+
+        & > p {
+          border-radius: 3.75rem;
+          padding: 0.75rem 1.875rem;
+          background-color: #ffdc80;
+          border: 0.125rem solid #ffdc80;
+          @include fontStyles(
+            $family: "Nunito-Black",
+            $color: #3c3c46,
+            $size: 1.3125rem,
+            $height: 1.875rem,
+            $align: center
+          );
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: inherit;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+hr {
+	border-top: inherit;
+}
+
+p,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+input,
+button,
+textarea {
+	font-size: 1rem;
+	font-weight: 400;
+	font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	box-sizing: border-box;
+	&:hover,
+	&:visited {
+		color: inherit;
+	}
+	&:focus,
+	&:active {
+		outline: inherit;
+	}
+}
+
+button {
+	cursor: pointer;
+	&:focus {
+		outline: inherit;
+	}
+	&:disabled {
+		opacity: 0.75;
+		cursor: not-allowed;
+	}
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 50px white inset;
+}

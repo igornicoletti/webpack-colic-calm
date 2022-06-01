@@ -1,0 +1,184 @@
+@import "../constants/mixins";
+@import "../constants/variables";
+@import "../constants/generics";
+
+.banner {
+  z-index: 6;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .bannerHome {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffdc80;
+
+    .bannerHomeImage {
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        object-position: bottom;
+      }
+    }
+
+    .bannerHomeCtn {
+      height: 100%;
+      display: grid;
+      align-items: center;
+      padding: 14.375rem 1.875rem 12.875rem;
+      @include maxContainer($maxWidth: 59.25rem);
+
+      .bannerHomeCtnGrid {
+        @include displayGrid();
+
+        & > h2 {
+          padding-bottom: 1.6875rem;
+          @include fontStyles(
+            $family: "Poppins-ExtraBold",
+            $color: #ffdc80,
+            $size: 3rem,
+            $height: 3.75rem,
+            $align: center
+          );
+        }
+
+        & > p {
+          padding-bottom: 2.625rem;
+          @include fontStyles(
+            $family: "Nunito-Medium",
+            $color: #dcdcff,
+            $size: 1.6875rem,
+            $height: 2.5rem,
+            $align: center
+          );
+        }
+
+        & > a {
+          margin: 0 auto;
+          width: 7.1875rem;
+          height: 2.1875rem;
+          border-radius: 1rem;
+          background-color: #ffdc80;
+          @include displayFlex($align: center, $justify: center);
+          @include fontStyles(
+            $family: "Poppins-Medium",
+            $color: #3c3c46,
+            $size: 0.9375rem,
+            $height: 0.9375rem,
+            $align: center
+          );
+        }
+      }
+    }
+  }
+
+  .bannerUseful {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .bannerUsefulImage {
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        object-position: bottom;
+      }
+    }
+
+    .bannerUsefulVitale {
+      left: 50%;
+      bottom: 0%;
+      padding: 0 1.875rem;
+      position: absolute !important;
+      transform: translate(-50%, 0%);
+      @include displayGrid($justify: flex-end);
+      @include maxContainer($maxWidth: 51.25rem);
+      @include sm {
+        bottom: -10%;
+        padding: 0 1.325rem;
+      }
+
+      .bannerUsefulVitaleItem {
+        width: 11.875rem !important;
+        @include displayGrid();
+
+        .bannerUsefulVitaleItemImage {
+          top: 0;
+          left: 50%;
+          z-index: 4;
+          width: 3.75rem;
+          height: 3.75rem;
+          position: absolute;
+          border-radius: 50%;
+          background-color: #d2d2ff;
+          transform: translate(-50%, 35%);
+          @include displayFlex($align: center, $justify: center);
+        }
+
+        .bannerUsefulVitaleItemInfo {
+          z-index: 2;
+          @include displayGrid();
+
+          & > div:nth-child(1) {
+            height: 3.875rem;
+            padding-bottom: 1.0625rem;
+            background-color: #005f91;
+            border-radius: 0.625rem 0.625rem 0 0;
+            @include displayFlex($align: flex-end, $justify: center);
+
+            & > p {
+              @include fontStyles($family: "Poppins-Bold", $color: #d2d2ff, $align: center);
+            }
+          }
+
+          & > div:nth-child(2) {
+            height: 2.1875rem;
+            background-color: #ffd280;
+            border-radius: 0 0 0.625rem 0.625rem;
+            @include displayFlex($align: center, $justify: center);
+
+            & > a {
+              @include fontStyles($family: "Poppins-Medium", $color: #3c3c46, $size: 0.9375rem, $align: center);
+            }
+          }
+        }
+      }
+    }
+
+    .bannerUsefulCtn {
+      height: 100%;
+      display: grid;
+      align-items: center;
+      min-height: 23.75rem;
+      padding: 13rem 1.875rem 7.1875rem;
+      @include maxContainer();
+
+      .bannerUsefulCtnGrid {
+        @include displayGrid();
+
+        & > p {
+          @include fontStyles($family: "Poppins-Regular", $color: #dcdcff, $size: 0.9375rem, $align: center);
+        }
+
+        & > h2 {
+          @include fontStyles(
+            $family: "Nunito-Black",
+            $color: #ffdc80,
+            $size: 2.625rem,
+            $height: 3.125rem,
+            $align: center
+          );
+        }
+      }
+    }
+  }
+}
+
+.bannerPddTop11 {
+  padding-top: 11.8125rem !important;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="290.77" height="180" viewBox="0 0 290.77 180">
+  <defs>
+    <radialGradient id="radial-gradient" cx="-0.178" cy="-0.017" r="1.762" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffb900"/>
+      <stop offset="0.338" stop-color="#a49936"/>
+      <stop offset="0.797" stop-color="#2f6f7e"/>
+      <stop offset="1" stop-color="#005f9b"/>
+    </radialGradient>
+  </defs>
+  <path id="Caminho_15820" data-name="Caminho 15820" d="M2173.769,951.538a68.808,68.808,0,0,1,46.991,18.655A89.782,89.782,0,0,1,2395.308,1000c0,47.337-36.671,85.706-83.077,89.3v.7H2173.769a69.231,69.231,0,0,1,0-138.462Z" transform="translate(-2104.538 -910)" fill="url(#radial-gradient)"/>
+</svg>

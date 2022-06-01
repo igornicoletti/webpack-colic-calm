@@ -1,0 +1,58 @@
+.switcher {
+  opacity: 0;
+  transition: .35s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.switcher input.switcherToggle {
+  display: none;
+}
+
+.switcher input.switcherToggle+label {
+  cursor: pointer;
+  width: 3.4375rem;
+  height: 1.5625rem;
+  position: relative;
+  display: inline-block;
+  border-radius: 0.78125rem;
+  background-color: #2380aa;
+}
+
+.switcher input.switcherToggle+label:before {
+  content: "";
+  display: block;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 50%;
+  transition: 0.1s ease-in-out;
+  background: rgba(19, 191, 17, 0);
+}
+
+.switcher input.switcherToggle+label:after {
+  top: 50%;
+  content: "";
+  left: 0.3125rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  position: absolute;
+  border-radius: 50%;
+  background: #ffdc80;
+  transition: 0.25s ease-in;
+  transform: translate(0%, -50%);
+  box-shadow: inset 0 0 0.3125rem rgba(255, 220, 128, 0.749);
+}
+
+.switcher input.switcherToggle:checked+label:before {
+  width: 3.4375rem;
+}
+
+.switcher input.switcherToggle:checked+label:after {
+  left: 2.1875rem;
+  box-shadow: none;
+  background: none;
+  background-size: cover;
+  background-image: url(../img/icon_lua.png);
+}

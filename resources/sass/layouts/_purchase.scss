@@ -1,0 +1,129 @@
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
+
+.purchase {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  &::before {
+    left: 50%;
+    z-index: -1;
+    content: '';
+    width: 150%;
+    height: 35rem;
+    bottom: -6.25rem;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, 0%);
+    background-color: var(--white-black);
+  }
+
+  .purchaseCtn {
+    padding: 4.75rem 1.875rem 0;
+    @include maxContainer($maxWidth: 65rem);
+    @include sm {
+      padding: 4.75rem 1.325rem 0;
+    }
+
+    .purchaseCtnGrid {
+      @include displayGrid();
+
+      .purchaseCtnGridTitle {
+        padding-bottom: 7.1875rem;
+
+        & > h2 {
+          position: relative;
+          @include fontStyles(
+            $family: 'Poppins-Bold',
+            $color: var(--dark-yellow),
+            $size: 2.625rem,
+            $height: 3.125rem,
+            $align: center
+          );
+
+          &::after {
+            left: 50%;
+            content: '';
+            width: 3.75rem;
+            height: 0.1875rem;
+            bottom: -2.1875rem;
+            position: absolute;
+            transform: translate(-50%, 0%);
+            background-color: var(--blue-light);
+          }
+
+          @include sm {
+            & > br {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .purchaseCtnGridList {
+        padding-bottom: 3.75rem;
+        @include displayGrid($gap: 1.25rem, $align: flex-start, $justify: center, $columns: repeat(5, auto));
+        @include md {
+          grid-template-columns: repeat(4, auto);
+        }
+        @include sm {
+          grid-template-columns: repeat(2, auto);
+        }
+
+        & > li {
+          width: 100%;
+          height: 4.375rem;
+          position: relative;
+          max-width: 11.25rem;
+          border-radius: 2.1875rem;
+          background-color: white;
+          border: 0.125rem solid #2380aa;
+          box-shadow: 0 0.25rem 0.75rem rgba(35, 128, 170, 0.25);
+
+          & > img {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2.1875rem;
+          }
+        }
+      }
+
+      .purchaseCtnGridPagination {
+        @include displayFlex($gap: 1.25rem, $align: center, $justify: center);
+
+        & > li {
+          width: 2.1875rem;
+          height: 2.1875rem;
+          border-radius: 50%;
+          background-color: inherit;
+          border: 0.125rem solid var(--blue-light);
+          @include displayFlex($align: center, $justify: center);
+
+          & > span {
+            @include fontStyles(
+              $family: 'Poppins-Medium',
+              $color: var(--blue-light),
+              $size: 0.8125rem,
+              $height: 0.8125rem,
+              $align: center
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.paginationActive {
+  background-color: #ffdc80 !important;
+  border: 0.125rem solid #ffdc80 !important;
+
+  & > span {
+    color: #3c3c46 !important;
+  }
+}

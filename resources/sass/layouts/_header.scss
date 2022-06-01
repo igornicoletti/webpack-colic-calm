@@ -1,0 +1,536 @@
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
+
+.header {
+  top: 0;
+  left: 0;
+  z-index: 22;
+  width: 100%;
+  height: auto;
+  position: absolute;
+
+  .headerFull {
+    height: 100%;
+    position: relative;
+    @include sm {
+      display: none;
+    }
+
+    .headerFullCtn {
+      padding: 0 1.875rem;
+      @include maxContainer();
+      @include sm {
+        padding: 0 1.325rem;
+      }
+
+      .headerFullCtnGrid {
+        @include displayGrid();
+
+        .headerFullCtnGridSup {
+          height: 5rem;
+          @include displayGrid($gap: 2.5rem, $align: center, $justify: space-between, $columns: repeat(2, auto));
+
+          &::after {
+            left: 50%;
+            bottom: 0;
+            content: '';
+            width: 200%;
+            height: 0.1875rem;
+            position: absolute;
+            background-color: #707070;
+            transform: translate(-50%, 50%);
+          }
+
+          .headerFullCtnGridSupImage {
+            & > a {
+              & > img {
+                width: auto;
+                height: 1.5625rem;
+              }
+
+              & > h1 {
+                top: 0;
+                left: 0;
+                position: absolute;
+                color: transparent !important;
+                transform: translate(0%, -100%);
+              }
+            }
+          }
+
+          .headerFullCtnGridSupInfo {
+            @include displayGrid($gap: 3.5rem, $align: center, $justify: flex-end, $columns: repeat(2, auto));
+
+            .headerFullCtnGridSupInfoSwitcher {
+              /* code in switcher.css file */
+            }
+
+            .headerFullCtnGridSupInfoSocials {
+              width: 100%;
+              height: 5rem;
+              min-width: 25rem;
+              position: relative;
+
+              & > img {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+              }
+
+              & > ul {
+                height: 100%;
+                @include displayGrid($gap: 1.875rem, $align: center, $justify: center, $columns: repeat(4, auto));
+
+                & > li {
+                  & > span {
+                    position: relative;
+                    @include fontStyles($family: 'Poppins-Bold', $color: #dcdcff, $size: 0.9375rem);
+
+                    &::after {
+                      left: 50%;
+                      content: '';
+                      width: 100%;
+                      bottom: -0.25rem;
+                      height: 0.1875rem;
+                      position: absolute;
+                      border-radius: 0.09375rem;
+                      background-color: #2380aa;
+                      transform: translate(-50%, 50%);
+                    }
+                  }
+
+                  & > a > img {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .headerFullCtnGridSub {
+          height: 3.85rem;
+          @include displayGrid($align: center);
+
+          & > nav > ul {
+            @include displayFlex($gap: 2.5rem, $align: center, $justify: flex-start);
+
+            & > li {
+              padding: 1.35rem 0;
+              position: relative;
+
+              & > a {
+                @include fontStyles($family: 'Poppins-Medium', $color: #dcdcff, $size: 0.9375rem);
+              }
+
+              &:hover {
+                & > a {
+                  color: #ffdc80;
+                  font-family: 'Poppins-Bold' !important;
+                }
+
+                & > ul {
+                  display: block;
+                }
+              }
+
+              & > ul {
+                left: 50%;
+                bottom: 0;
+                display: none;
+                position: absolute;
+                transform: translate(-50%, 100%);
+
+                & > li {
+                  width: 10rem;
+                  height: 4.375rem;
+                  position: relative;
+                  border-radius: 0.625rem;
+                  margin-bottom: 0.625rem;
+                  background-color: #005f9b;
+
+                  & > a {
+                    height: 100%;
+                    @include fontStyles($family: 'Nunito-Medium', $color: #ffdc80, $height: 1.25rem);
+                    @include displayGrid($gap: 0.75rem, $align: center, $justify: center, $columns: repeat(2, auto));
+                  }
+                }
+              }
+            }
+          }
+
+          .headerFullCtnGridSubShare {
+            right: 0;
+            bottom: 0;
+            position: absolute;
+
+            &:hover {
+              & > div {
+                opacity: 1;
+                bottom: -3.25rem;
+                transition: 0.25s ease-in;
+              }
+            }
+
+            & > button {
+              right: 0;
+              bottom: 0;
+              z-index: 1;
+              width: 10.4375rem;
+              height: 2.1875rem;
+              position: absolute;
+              border-radius: 1.0625rem;
+              background-color: inherit;
+              transform: translate(0%, 50%);
+              border: 0.125rem solid #dcdcff;
+
+              & > span {
+                margin-left: 0.5rem;
+                @include fontStyles($family: 'Poppins-Medium', $color: #dcdcff, $size: 0.9375rem);
+              }
+            }
+
+            & > div {
+              opacity: 0;
+              width: 12.5rem;
+              bottom: -1.5rem;
+              height: 2.1875rem;
+              position: relative;
+
+              & > img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+              }
+
+              & > ul {
+                height: 100%;
+                padding-right: 1.75rem;
+                padding-bottom: 0.25rem;
+                @include displayGrid($gap: 1.875rem, $align: flex-end, $justify: flex-end, $columns: repeat(3, auto));
+
+                & > li > a > img {
+                  width: 1rem;
+                  height: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .headerMb {
+    width: 100%;
+    display: none;
+
+    @include sm {
+      display: block;
+    }
+
+    .headerMbCtn {
+      padding: 0 1.325rem;
+      @include maxContainer();
+
+      .headerMbCtnGrid {
+        height: 5rem;
+        @include displayGrid($gap: 2.5rem, $align: center, $justify: space-between, $columns: repeat(3, auto));
+
+        &::after {
+          left: 50%;
+          bottom: 0;
+          content: '';
+          width: 200%;
+          height: 0.1875rem;
+          position: absolute;
+          background-color: #707070;
+          transform: translate(-50%, 50%);
+        }
+
+        .headerMbCtnGridImage {
+          & > a {
+            & > img {
+              width: auto;
+              height: 1.5625rem;
+            }
+
+            & > h1 {
+              top: 0;
+              left: 0;
+              position: absolute;
+              color: transparent !important;
+              transform: translate(0%, -100%);
+            }
+          }
+        }
+
+        .headerMbCtnGridMenu {
+          position: relative;
+
+          & > input {
+            display: none;
+
+            &:checked ~ label {
+              & > span {
+                background: #dcdcff;
+              }
+
+              & > span:nth-child(1) {
+                top: 0.37rem;
+                left: 0.05rem;
+                transform: rotate(45deg);
+              }
+
+              & > span:nth-child(2) {
+                top: -0.4rem;
+                left: -0.05rem;
+                transform: rotate(-45deg);
+              }
+            }
+
+            &:checked ~ .headerMbCtnGridMenuSlice {
+              visibility: visible;
+              transition: 0.25s ease-in;
+
+              .headerMbCtnGridMenuSliceSlice {
+                right: 0;
+                transition: 0.25s ease-in;
+              }
+            }
+          }
+
+          & > label {
+            top: 0;
+            right: 0;
+            width: 2rem;
+            cursor: pointer;
+            position: absolute;
+            transform: translate(0%, -50%);
+
+            & > span {
+              top: 0;
+              right: 0;
+              z-index: 2;
+              width: 100%;
+              float: right;
+              height: 0.25rem;
+              overflow: hidden;
+              position: relative;
+              background: #dcdcff;
+              margin-bottom: 0.5rem;
+              transform: rotate(0deg);
+              transition: 0.25s ease-in;
+
+              &:nth-child(1) {
+                float: right;
+                transition: 0.25s ease-in;
+              }
+
+              &:nth-child(2) {
+                float: left;
+                margin-bottom: 0;
+                transition: 0.25s ease-in;
+              }
+            }
+          }
+
+          .headerMbCtnGridMenuSlice {
+            top: 0;
+            right: 0;
+            left: auto;
+            z-index: -1;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            overflow: auto;
+            visibility: hidden;
+            justify-content: flex-end;
+            position: fixed !important;
+            overflow-x: hidden !important;
+
+            .headerMbCtnGridMenuSliceSlice {
+              z-index: 2;
+              width: 100%;
+              right: -45rem;
+              height: 100vh;
+              max-width: 35rem;
+              overflow: hidden;
+              position: relative;
+              background: white;
+              transition: 0.25s ease-in;
+              overflow-y: auto !important;
+              padding: 7.5rem 1.5rem 1.5rem;
+              @include displayGrid($align: flex-start);
+
+              .headerMbCtnGridMenuSliceSliceCt {
+                @include displayGrid($gap: 2.5rem);
+
+                .headerMbCtnGridMenuSliceSliceCtSup {
+                  & > ul {
+                    @include displayGrid();
+
+                    & > li {
+                      padding: 1.5rem 0;
+                      border-bottom: 0.125rem solid #f5f7f8;
+
+                      & > a {
+                        @include fontStyles($family: 'Poppins-Medium', $color: #3c3c46, $size: 1.125rem);
+                      }
+
+                      & > ul {
+                        @include displayGrid();
+
+                        & > li {
+                          padding: 1.5rem 0 0 1.5rem;
+
+                          & > a {
+                            @include fontStyles($family: 'Poppins-Medium', $color: #3c3c46, $size: 1.125rem);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .headerMbCtnGridMenuSliceSliceCtSub {
+                  @include displayGrid();
+
+                  & > nav > ul {
+                    padding-bottom: 2.5rem;
+                    @include displayFlex($gap: 2.5rem, $align: center, $justify: flex-start);
+
+                    & > li {
+                      & > span {
+                        position: relative;
+                        @include fontStyles($family: 'Poppins-Bold', $color: #ffdc80);
+
+                        &::after {
+                          left: 50%;
+                          content: '';
+                          width: 100%;
+                          bottom: -0.25rem;
+                          height: 0.1875rem;
+                          position: absolute;
+                          border-radius: 0.09375rem;
+                          background-color: #2380aa;
+                          transform: translate(-50%, 50%);
+                        }
+                      }
+
+                      & > a > img {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                      }
+                    }
+                  }
+
+                  .headerMbCtnGridMenuSliceSliceCtSubShare {
+                    &:hover {
+                      & > div {
+                        opacity: 1;
+                        margin-top: 0;
+                        transition: 0.25s ease-in;
+                      }
+                    }
+
+                    & > button {
+                      width: 100%;
+                      padding: 1.125rem;
+                      border-radius: 1.125rem;
+                      background-color: inherit;
+                      border: 0.125rem solid #ffdc80;
+
+                      & > span {
+                        padding-left: 0.5rem;
+                        @include fontStyles($family: 'Poppins-Medium', $color: #ffdc80, $size: 1.125rem);
+                      }
+                    }
+
+                    & > div {
+                      opacity: 0;
+                      width: 100%;
+                      height: 5rem;
+                      position: relative;
+                      margin-top: -1.5rem;
+
+                      & > img {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                      }
+
+                      & > ul {
+                        height: 100%;
+                        padding: 0 7.55rem;
+                        @include displayGrid(
+                          $gap: 2.875rem,
+                          $align: center,
+                          $justify: space-between,
+                          $columns: repeat(3, auto)
+                        );
+
+                        & > li > a > img {
+                          width: 1.5rem;
+                          height: 1.5rem;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.headerActive {
+  & > a {
+    color: #ffdc80 !important;
+    font-family: 'Poppins-Bold' !important;
+
+    &::after {
+      left: 50%;
+      content: '';
+      bottom: 0;
+      height: 0.4375rem;
+      width: 0.706875rem;
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(-50%, 0%);
+      background-image: url(../img/icon_header_cloud.svg);
+    }
+  }
+}
+
+.headerMbActive {
+  & > a {
+    color: #ffdc80 !important;
+    font-family: 'Poppins-Bold' !important;
+  }
+}
+
+.headerMbFixed {
+  position: fixed !important;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    display: none;
+    transform: translate(100%, 50%);
+  }
+  100% {
+    opacity: 1;
+    display: block;
+    transform: translate(0%, 50%);
+  }
+}

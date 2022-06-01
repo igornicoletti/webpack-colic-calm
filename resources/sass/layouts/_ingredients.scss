@@ -1,0 +1,282 @@
+.ingredients {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .ingredientsCtn {
+    padding: 4.8125rem 1.875rem 3.625rem;
+    @include maxContainer();
+    @include sm {
+      padding: 4.8125rem 1.325rem 3.625rem;
+    }
+
+    .ingredientsCtnGrid {
+      @include displayGrid();
+
+      .ingredientsCtnGridList {
+        padding-bottom: 4.3125rem;
+        @include displayGrid();
+
+        &::before {
+          left: 50%;
+          bottom: 0;
+          z-index: -1;
+          content: "";
+          width: 175%;
+          position: absolute;
+          background-color: #ffdc80;
+          height: calc(100% + 4.8125rem);
+          transform: translate(-50%, 0%);
+        }
+
+        & > ul {
+          @include displayGrid($gap: 0.5rem, $columns: repeat(9, 1fr));
+          @include md {
+            gap: 2.5rem 5rem;
+            justify-content: center;
+            grid-template-columns: repeat(3, auto);
+          }
+
+          .ingredientsCtnGridListItem {
+            @include displayGrid($gap: 1.1875rem, $rows: auto 1fr);
+
+            &:nth-child(1) > button > img {
+              width: 5.0625rem;
+            }
+
+            &:nth-child(2) > button > img {
+              width: 6.3125rem;
+            }
+
+            &:nth-child(3) > button > img {
+              width: 5.5625rem;
+            }
+
+            &:nth-child(4) > button > img {
+              width: 4rem;
+            }
+
+            &:nth-child(5) > button > img {
+              width: 3.3125rem;
+            }
+
+            &:nth-child(6) > button > img {
+              width: 4.5rem;
+            }
+
+            &:nth-child(7) > button > img {
+              width: 6rem;
+            }
+
+            &:nth-child(8) > button > img {
+              width: 3.9375rem;
+            }
+
+            &:nth-child(9) > button > img {
+              width: 5.5625rem;
+            }
+
+            & > button {
+              width: 5rem;
+              height: 5rem;
+              margin: 0 auto;
+              position: relative;
+              border-radius: 50%;
+              background-color: white;
+
+              & > img {
+                left: 50%;
+                height: auto;
+                bottom: 0.5rem;
+                position: absolute;
+                transform: translate(-50%, 0%);
+                @include sm {
+                  width: 100% !important;
+                }
+              }
+            }
+
+            & > p {
+              @include fontStyles(
+                $family: "Poppins-Regular",
+                $color: #3c3c46,
+                $size: 0.9375rem,
+                $height: 1.125rem,
+                $align: center
+              );
+            }
+          }
+        }
+      }
+
+      .ingredientsCtnGridInfo {
+        height: 100%;
+        @include displayGrid();
+
+        &::before {
+          top: 0%;
+          left: 50%;
+          z-index: -1;
+          content: "";
+          width: 200%;
+          height: 100%;
+          position: absolute;
+          border-radius: 50%;
+          background-color: #ffdc80;
+          transform: translate(-50%, -50%);
+          @include md {
+            width: 200%;
+          }
+          @include sm {
+            transform: translate(-50%, -25%);
+          }
+        }
+
+        .ingredientsCtnGridInfoImage {
+          width: 40rem;
+          height: 40rem;
+          margin: 0 auto;
+          position: relative;
+          border-radius: 50%;
+          background-color: var(--white-black);
+          @include lg {
+            width: 35rem;
+            height: 35rem;
+          }
+          @include md {
+            width: 30rem;
+            height: 30rem;
+          }
+          @include sm {
+            width: 27.5rem;
+            height: 27.5rem;
+          }
+
+          & > img {
+            left: 50%;
+            bottom: 35%;
+            height: auto;
+            width: 27.5rem;
+            max-height: 65%;
+            position: absolute;
+            transform: translate(-50%, 0%);
+
+            @include md {
+              width: 22.5rem;
+            }
+          }
+        }
+
+        .ingredientsCtnGridInfoLeaflet {
+          top: 50%;
+          right: 0;
+          width: 16.375rem;
+          position: absolute;
+          @include md {
+            top: 25%;
+          }
+          @include sm {
+            top: 0;
+            grid-row: 1;
+            width: 82.5%;
+            margin: 0 auto;
+            position: relative;
+          }
+
+          & > div {
+            @include displayGrid();
+
+            & > a {
+              margin: 0 auto 1.375rem;
+              padding: 0.75rem 1.5rem;
+              border-radius: 1.71875rem;
+              background-color: #005f9b;
+              @include displayFlex($gap: 1.5rem, $align: center, $justify: center);
+
+              & > img {
+                width: 1.125rem;
+                height: 1.125rem;
+              }
+
+              & > span {
+                @include fontStyles($family: "Poppins-Bold", $color: #dcdcff, $size: 1.375rem, $height: 1.875rem);
+              }
+            }
+
+            & > p {
+              padding: 0 1.125rem;
+              @include fontStyles(
+                $family: "Nunito-Medium",
+                $color: var(--dark-light),
+                $size: 1.125rem,
+                $height: 1.5625rem
+              );
+              @include sm {
+                color: white;
+                text-align: center;
+                padding-bottom: 2.875rem;
+              }
+            }
+          }
+        }
+      }
+
+      .ingredientsCtnGridTitle {
+        margin-top: -7.5rem;
+        @include displayGrid();
+
+        & > h2 {
+          padding-bottom: 0.125rem;
+          @include fontStyles(
+            $family: "Poppins-Bold",
+            $color: var(--dark-light),
+            $size: 6.25rem,
+            $height: 6.875rem,
+            $align: center
+          );
+
+          @include md {
+            font-size: 3.875rem;
+            line-height: 4.375rem;
+          }
+        }
+
+        & > span {
+          padding-bottom: 4.1875rem;
+          @include fontStyles(
+            $family: "Poppins-Regular",
+            $color: var(--dark-light),
+            $size: 1.3125rem,
+            $height: 1.875rem,
+            $align: center
+          );
+        }
+
+        & > p {
+          @include fontStyles(
+            $family: "Poppins-Regular",
+            $color: var(--dark-light),
+            $size: 1.6875rem,
+            $height: 2.5rem,
+            $align: center
+          );
+        }
+      }
+    }
+  }
+}
+
+.ingredientsActive {
+  & > button::before {
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 6.25rem;
+    height: 6.25rem;
+    position: absolute;
+    border-radius: 50%;
+    border: 0.125rem solid #005f9b;
+    transform: translate(-50%, -50%);
+  }
+}

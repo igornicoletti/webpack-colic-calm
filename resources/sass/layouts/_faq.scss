@@ -1,0 +1,163 @@
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
+
+.faq {
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  .faqCtn {
+    padding: 4.8125rem 1.875rem 3.625rem;
+    @include maxContainer();
+    @include sm {
+      padding: 4.8125rem 1.325rem 3.625rem;
+    }
+
+    .faqCtnGrid {
+      @include displayGrid();
+
+      .faqCtnGridTitle {
+        padding-bottom: 6.375rem;
+
+        & > h3 {
+          position: relative;
+          @include fontStyles(
+            $family: 'Poppins-Medium',
+            $color: var(--dark-light),
+            $size: 1.375rem,
+            $height: 1.875rem,
+            $align: center
+          );
+
+          &::after {
+            left: 50%;
+            content: '';
+            bottom: -2rem;
+            width: 3.75rem;
+            height: 0.1875rem;
+            position: absolute;
+            background-color: var(--blue-light);
+            transform: translate(-50%, 0%);
+          }
+        }
+      }
+
+      .faqCtnGridList {
+        @include displayGrid($gap: 1.25rem, $align: flex-start, $justify: space-between, $columns: repeat(2, 1fr));
+        @include sm {
+          grid-template-columns: 1fr;
+        }
+
+        & > ul {
+          @include displayGrid($gap: 1.25rem);
+
+          & > li {
+            width: 100%;
+            position: relative;
+            min-height: 8.75rem;
+            padding: 2.3125rem 2.5rem;
+
+            &:before {
+              top: 0;
+              left: 0;
+              z-index: -1;
+              content: '';
+              width: 100%;
+              position: absolute;
+              border-radius: 1.75rem;
+              height: calc(100% - 2rem);
+              background-color: var(--white-black);
+              border: 0.1875rem solid var(--blue-light);
+            }
+
+            &:after {
+              top: 0;
+              left: 0;
+              z-index: -1;
+              content: '';
+              height: 100%;
+              position: absolute;
+              width: calc(100% - 2rem);
+              background-color: var(--white-black);
+              border: 0.1875rem solid var(--blue-light);
+              border-radius: 1.75rem 0 1.75rem 1.75rem;
+              border-right: inherit;
+            }
+
+            .faqCtnGridListArrow {
+              top: 0.9375rem;
+              cursor: pointer;
+              width: 1.875rem;
+              height: 1.875rem;
+              right: 0.9375rem;
+              border-radius: 50%;
+              background-color: #ffdc80;
+              position: absolute !important;
+              border: 0.1875rem solid #ffdc80;
+              @include displayFlex($align: center, $justify: center);
+
+              & > img {
+                width: 0.5rem;
+                height: 0.25rem;
+              }
+            }
+
+            .faqCtnGridListText {
+              @include displayGrid();
+
+              & > h4 {
+                padding-right: 1.5rem;
+                @include fontStyles(
+                  $family: 'Poppins-Medium',
+                  $color: var(--dark-light),
+                  $size: 1.375rem,
+                  $height: 1.875rem
+                );
+              }
+
+              & > p {
+                display: none;
+                padding-top: 0.875rem;
+                @include fontStyles(
+                  $family: 'Nunito-Medium',
+                  $color: var(--dark-light),
+                  $size: 1.125rem,
+                  $height: 1.625rem
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.faqActive {
+  &:before,
+  &:after {
+    border-color: #ffdc80 !important;
+    background-color: #ffdc80 !important;
+  }
+
+  .faqCtnGridListArrow {
+    border: 0.125rem solid #3c3c46 !important;
+
+    & > img {
+      transform: rotate(180deg) !important;
+    }
+  }
+
+  .faqCtnGridListText {
+    & > h4 {
+      color: #3c3c46 !important;
+    }
+
+    & > p {
+      display: block !important;
+      color: #3c3c46 !important;
+    }
+  }
+}
