@@ -1,4 +1,4 @@
-# Colic Calm
+# Webpack Colic Calm
 
 ## Installation
 
