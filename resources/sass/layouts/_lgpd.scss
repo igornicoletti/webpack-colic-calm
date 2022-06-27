@@ -21,7 +21,7 @@
     max-width: 26.25rem;
     border-radius: 1.875rem;
     background-color: #dcdcff;
-    box-shadow: 0 0 2rem 2rem rgba(0, 95, 155, 0.25);
+    box-shadow: 0 1rem 2rem 1.5rem rgba(0, 95, 155, 0.15);
 
     & > img:nth-child(1) {
       top: 35%;
@@ -65,7 +65,7 @@
       & > p {
         padding-bottom: 1.1875rem;
         @include fontStyles(
-          $family: "Nunito-Medium",
+          $family: 'Nunito-Medium',
           $color: #3c3c46,
           $size: 1.125rem,
           $height: 1.5625rem,
@@ -84,8 +84,12 @@
           width: 5.625rem;
           height: 2.1875rem;
           border-radius: 1.09375rem;
+          transition: 0.15s ease-in;
           @include displayFlex($align: center, $justify: center);
-          @include fontStyles($family: "Poppins-Medium", $color: inherit, $size: 0.9375rem, $align: center);
+          @include fontStyles($family: 'Poppins-Medium', $color: inherit, $size: 0.9375rem, $align: center);
+          &:hover {
+            transform: translateY(-0.25rem);
+          }
         }
 
         & > button:nth-child(1) {

@@ -1,9 +1,9 @@
 import '../sass/main.scss'
 
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'
 
-import 'aos/dist/aos.css';
-import AOS from 'aos/dist/aos.js';
+import 'aos/dist/aos.css'
+import AOS from 'aos/dist/aos.js'
 
 import 'owl.carousel'
 import 'owl.carousel/dist/assets/owl.carousel.css'
@@ -15,7 +15,7 @@ import 'select2'
 import 'select2/dist/css/select2.min.css'
 
 // Share
-import './share/share';
+import './share/share'
 
 $(document).ready(function () {
 
@@ -49,28 +49,23 @@ $(document).ready(function () {
     })
   })
 
-  // Banner Home
+  // Banner
   const owlBannerHome = $('#owl-bannerHome')
   if (owlBannerHome) {
     owlBannerHome.owlCarousel({
       items: 1,
       loop: true,
       lazyLoad: true,
-      autoplay: false,
+      autoplay: true,
       autoHeight: true,
-      autoplayTimeout: 7500,
+      autoplayTimeout: 5000,
       autoplayHoverPause: true,
     })
   }
 
-  Fancybox.bind("[data-fancybox]", {
-    // Your options go here
-  });
-
   $("#js-example-basic-hide-search").select2({
     minimumResultsForSearch: Infinity
-  });
-
+  })
 
   // Theme Switcher
   const html = document.querySelector('html')
@@ -123,24 +118,24 @@ $(document).ready(function () {
   }
 
   checkbox.addEventListener('change', ({ target }) => {
-    let targerChecked = target.checked;
-    let layoutMode;
+    let targerChecked = target.checked
+    let layoutMode
 
     if (targerChecked) {
-      layoutMode = 'dark';
-      switchColors(darkMode);
+      layoutMode = 'dark'
+      switchColors(darkMode)
     }
 
     if (!targerChecked) {
-      layoutMode = 'light';
-      switchColors(lightMode);
+      layoutMode = 'light'
+      switchColors(lightMode)
     }
 
-    localStorage.setItem('layoutColorTheme', layoutMode);
-  });
+    localStorage.setItem('layoutColorTheme', layoutMode)
+  })
 
   const layoutColorThemeLocalStorage = function layoutColorThemeLocalStorage() {
-    let currentTheme = localStorage.getItem('layoutColorTheme');
+    let currentTheme = localStorage.getItem('layoutColorTheme')
 
     let themes = {
       'light': lightMode,
@@ -148,39 +143,36 @@ $(document).ready(function () {
     }
 
     if (!currentTheme) {
-      localStorage.setItem('layoutColorTheme', 'light');
-      currentTheme = 'light';
+      localStorage.setItem('layoutColorTheme', 'light')
+      currentTheme = 'light'
     }
 
-    switchColors(themes[currentTheme]);
-    if (currentTheme == 'dark') checkbox.checked = true;
+    switchColors(themes[currentTheme])
+    if (currentTheme == 'dark') checkbox.checked = true
 
     setTimeout(() => {
-      let $switcher = document.querySelector('.switcher');
-      if ($switcher) $switcher.classList.add('active');
-    }, 150);
+      let $switcher = document.querySelector('.switcher')
+      if ($switcher) $switcher.classList.add('active')
+    }, 150)
   }
 
-  layoutColorThemeLocalStorage();
+  layoutColorThemeLocalStorage()
 
-})
+  // Cookie Lgpd
+  const $inLgpd = $('#lgpd')
+  const $lgpdAccept = $('.lgpdAccept')
+  const $lgpdDeny = $('.lgpdDeny')
 
-// Cookie Lgpd
-const $inLgpd = $('#lgpd')
-const $lgpdAccept = $('.lgpdAccept')
-const $lgpdDeny = $('.lgpdDeny')
+  if (Cookies.get('colic_lgpd')) $inLgpd.addClass('lgpdNone')
 
-if (Cookies.get('colic_lgpd')) {
-  $inLgpd.addClass('lgpdNone')
-}
-
-$lgpdAccept.on('click', function () {
-  Cookies.set('colic_lgpd', true, {
-    expires: 365
+  $lgpdAccept.on('click', () => {
+    Cookies.set('colic_lgpd', true, {
+      expires: 365
+    })
+    $inLgpd.addClass('lgpdNone')
   })
-  $inLgpd.addClass('lgpdNone')
-})
 
-$lgpdDeny.on('click', function () {
-  $inLgpd.addClass('lgpdNone')
+  $lgpdDeny.on('click', () => {
+    $inLgpd.addClass('lgpdNone')
+  })
 })

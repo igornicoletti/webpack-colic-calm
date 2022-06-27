@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .distributor {
   z-index: 2;
@@ -35,7 +35,7 @@
         & > h2 {
           padding-bottom: 1.1875rem;
           @include fontStyles(
-            $family: "Poppins-Bold",
+            $family: 'Poppins-Bold',
             $color: #dcdcff,
             $size: 2.625rem,
             $height: 3.125rem,
@@ -46,7 +46,7 @@
         & > p {
           padding-bottom: 4.5rem;
           @include fontStyles(
-            $family: "Nunito-Medium",
+            $family: 'Nunito-Medium',
             $color: #dcdcff,
             $size: 1.6875rem,
             $height: 2.5rem,
@@ -96,7 +96,7 @@
             padding: 0 0.25rem;
             padding-bottom: 1.3125rem;
             @include fontStyles(
-              $family: "Nunito-Medium",
+              $family: 'Nunito-Medium',
               $color: #dcdcff,
               $size: 1.3125rem,
               $height: 1.875rem,
@@ -109,12 +109,16 @@
             width: 6.875rem;
             height: 2.1875rem;
             border-radius: 1rem;
+            transition: 0.15s ease-in;
             background-color: #ffdc80;
             @include displayFlex($align: center, $justify: center);
+            &:hover {
+              transform: translateY(-0.25rem);
+            }
 
             & > span {
               @include fontStyles(
-                $family: "Poppins-Medium",
+                $family: 'Poppins-Medium',
                 $color: #3c3c46,
                 $size: 0.8125rem,
                 $height: 0.8125rem,

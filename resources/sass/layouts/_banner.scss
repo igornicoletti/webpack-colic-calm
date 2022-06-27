@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .banner {
   z-index: 6;
@@ -37,7 +37,7 @@
         & > h2 {
           padding-bottom: 1.6875rem;
           @include fontStyles(
-            $family: "Poppins-ExtraBold",
+            $family: 'Poppins-ExtraBold',
             $color: #ffdc80,
             $size: 3rem,
             $height: 3.75rem,
@@ -48,7 +48,7 @@
         & > p {
           padding-bottom: 2.625rem;
           @include fontStyles(
-            $family: "Nunito-Medium",
+            $family: 'Nunito-Medium',
             $color: #dcdcff,
             $size: 1.6875rem,
             $height: 2.5rem,
@@ -61,15 +61,20 @@
           width: 7.1875rem;
           height: 2.1875rem;
           border-radius: 1rem;
+          transition: 0.15s ease-in;
           background-color: #ffdc80;
           @include displayFlex($align: center, $justify: center);
           @include fontStyles(
-            $family: "Poppins-Medium",
+            $family: 'Poppins-Medium',
             $color: #3c3c46,
             $size: 0.9375rem,
             $height: 0.9375rem,
             $align: center
           );
+
+          &:hover {
+            transform: translateY(-0.25rem);
+          }
         }
       }
     }
@@ -132,7 +137,7 @@
             @include displayFlex($align: flex-end, $justify: center);
 
             & > p {
-              @include fontStyles($family: "Poppins-Bold", $color: #d2d2ff, $align: center);
+              @include fontStyles($family: 'Poppins-Bold', $color: #d2d2ff, $align: center);
             }
           }
 
@@ -143,7 +148,7 @@
             @include displayFlex($align: center, $justify: center);
 
             & > a {
-              @include fontStyles($family: "Poppins-Medium", $color: #3c3c46, $size: 0.9375rem, $align: center);
+              @include fontStyles($family: 'Poppins-Medium', $color: #3c3c46, $size: 0.9375rem, $align: center);
             }
           }
         }
@@ -162,12 +167,12 @@
         @include displayGrid();
 
         & > p {
-          @include fontStyles($family: "Poppins-Regular", $color: #dcdcff, $size: 0.9375rem, $align: center);
+          @include fontStyles($family: 'Poppins-Regular', $color: #dcdcff, $size: 0.9375rem, $align: center);
         }
 
         & > h2 {
           @include fontStyles(
-            $family: "Nunito-Black",
+            $family: 'Nunito-Black',
             $color: #ffdc80,
             $size: 2.625rem,
             $height: 3.125rem,

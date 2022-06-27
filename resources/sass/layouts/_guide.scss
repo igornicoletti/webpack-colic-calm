@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .guide {
   z-index: 4;
@@ -35,7 +35,7 @@
 
         &::before {
           bottom: 50%;
-          content: "";
+          content: '';
           width: 0.125rem;
           height: 4.375rem;
           right: -1.125rem;
@@ -45,7 +45,7 @@
 
           @include sm {
             right: 50%;
-            content: "";
+            content: '';
             width: 4.375rem;
             height: 0.125rem;
             bottom: -2.5rem;
@@ -65,7 +65,7 @@
 
         & > h3 {
           padding-bottom: 1.1875rem;
-          @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 2rem, $height: 2.5rem, $align: center);
+          @include fontStyles($family: 'Poppins-Bold', $color: #3c3c46, $size: 2rem, $height: 2.5rem, $align: center);
           @include sm {
             & > br {
               display: none;
@@ -74,7 +74,7 @@
 
           & > span {
             @include fontStyles(
-              $family: "Nunito-Bold",
+              $family: 'Nunito-Bold',
               $color: #3c3c46,
               $size: 1.3125rem,
               $height: 1.875rem,
@@ -86,7 +86,7 @@
         & > p {
           padding-bottom: 1.625rem;
           @include fontStyles(
-            $family: "Nunito-Medium",
+            $family: 'Nunito-Medium',
             $color: #3c3c46,
             $size: 1.3125rem,
             $height: 1.875rem,
@@ -98,8 +98,13 @@
           margin: 0 auto;
           border-radius: 1rem;
           padding: 0.55rem 1rem;
+          transition: 0.15s ease-in;
           background-color: #2380aa;
-          @include fontStyles($family: "Poppins-Medium", $color: #dcdcff, $size: 0.9375rem, $align: center);
+          @include fontStyles($family: 'Poppins-Medium', $color: #dcdcff, $size: 0.9375rem, $align: center);
+
+          &:hover {
+            transform: translateY(-0.25rem);
+          }
         }
       }
     }

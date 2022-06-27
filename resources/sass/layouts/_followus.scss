@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .follow {
   z-index: 4;
@@ -31,14 +31,14 @@
           @include displayGrid($gap: 0.5625rem);
 
           & > h2 {
-            @include fontStyles($family: "Poppins-Bold", $color: #dcdcff, $size: 2rem, $height: 2.5rem);
+            @include fontStyles($family: 'Poppins-Bold', $color: #dcdcff, $size: 2rem, $height: 2.5rem);
           }
 
           & > div {
             @include displayGrid($gap: 0.9375rem, $align: center, $justify: flex-start, $columns: repeat(2, auto));
 
             & > p {
-              @include fontStyles($family: "Nunito-Medium", $color: #dcdcff, $size: 1.3125rem, $height: 1.875rem);
+              @include fontStyles($family: 'Nunito-Medium', $color: #dcdcff, $size: 1.3125rem, $height: 1.875rem);
             }
 
             & > img {
@@ -74,7 +74,11 @@
           }
 
           & > a {
-            @include fontStyles($family: "Nunito-Bold", $color: #dcdcff, $size: 0.9375rem, $decoration: underline);
+            transition: 0.15s ease-in;
+            @include fontStyles($family: 'Nunito-Bold', $color: #dcdcff, $size: 0.9375rem, $decoration: underline);
+            &:hover {
+              transform: translateY(-0.25rem);
+            }
           }
         }
       }

@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .colic {
   z-index: 4;
@@ -59,7 +59,7 @@
 
         & > h2 {
           padding-bottom: 3.6875rem;
-          @include fontStyles($family: "Poppins-Bold", $color: var(--dark-light), $size: 2.625rem, $height: 3.125rem);
+          @include fontStyles($family: 'Poppins-Bold', $color: var(--dark-light), $size: 2.625rem, $height: 3.125rem);
 
           & > br {
             display: none;
@@ -73,7 +73,7 @@
         }
 
         & > p {
-          @include fontStyles($family: "Nunito-Medium", $color: var(--dark-light), $size: 1.6875rem, $height: 2.5rem);
+          @include fontStyles($family: 'Nunito-Medium', $color: var(--dark-light), $size: 1.6875rem, $height: 2.5rem);
 
           & > span {
             color: var(--blue-light);
@@ -86,15 +86,19 @@
           height: 3.4375rem;
           margin-top: 2.3125rem;
           border-radius: 1.75rem;
+          transition: 0.15s ease-in;
           background-color: #005f9b;
           @include displayFlex($align: center, $justify: center);
           @include fontStyles(
-            $family: "Poppins-Bold",
+            $family: 'Poppins-Bold',
             $color: #dcdcff,
             $size: 1.375rem,
             $height: 1.375rem,
             $align: center
           );
+          &:hover {
+            transform: translateY(-0.25rem);
+          }
         }
       }
     }

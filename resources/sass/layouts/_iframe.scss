@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .iframe {
   z-index: 2;
@@ -12,7 +12,7 @@
     top: 0%;
     left: 50%;
     z-index: -1;
-    content: "";
+    content: '';
     width: 150%;
     height: 100%;
     position: absolute;
@@ -38,7 +38,7 @@
         padding-bottom: 2.8125rem;
         & > h3 {
           @include fontStyles(
-            $family: "Poppins-Bold",
+            $family: 'Poppins-Bold',
             $color: #3c3c46,
             $size: 1.625rem,
             $height: 2.5rem,
@@ -58,7 +58,7 @@
           position: relative;
 
           &::after {
-            content: "";
+            content: '';
             top: 50%;
             left: 50%;
             width: 5rem;

@@ -1,6 +1,6 @@
-@import "../constants/mixins";
-@import "../constants/variables";
-@import "../constants/generics";
+@import '../constants/mixins';
+@import '../constants/variables';
+@import '../constants/generics';
 
 .footer {
   z-index: 4;
@@ -12,7 +12,7 @@
   &::before {
     top: 0;
     left: 0;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -63,7 +63,7 @@
         & > p {
           width: 100%;
           max-width: 18.625rem;
-          @include fontStyles($family: "Nunito-Medium", $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
+          @include fontStyles($family: 'Nunito-Medium', $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
           @include md {
             max-width: 100%;
           }
@@ -81,7 +81,7 @@
             @include displayGrid($gap: 0.875rem);
 
             & > li > a {
-              @include fontStyles($family: "Poppins-Bold", $color: #3c3c46, $size: 0.9375rem);
+              @include fontStyles($family: 'Poppins-Bold', $color: #3c3c46, $size: 0.9375rem);
               @include displayGrid($gap: 0.875rem, $align: center, $justify: flex-start, $columns: repeat(2, auto));
             }
           }
@@ -97,11 +97,15 @@
             & > li > a > img {
               width: 1.875rem;
               height: 1.875rem;
+              transition: 0.15s ease-in;
+              &:hover {
+                transform: translateY(-0.25rem);
+              }
             }
           }
 
           & > p {
-            @include fontStyles($family: "Nunito-Bold", $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
+            @include fontStyles($family: 'Nunito-Bold', $color: #3c3c46, $size: 0.9375rem, $height: 1.25rem);
             @include sm {
               text-align: center;
 
