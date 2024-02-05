@@ -47,6 +47,7 @@
       .faqCtnGridList {
         @include displayGrid($gap: 1.25rem, $align: flex-start, $justify: space-between, $columns: repeat(2, 1fr));
         @include sm {
+          gap: 3.25rem;
           grid-template-columns: 1fr;
         }
 
